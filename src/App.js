@@ -9,6 +9,14 @@ function App() {
 	const webcamRef = useRef(null);
 	const canvasRef = useRef(null);
 
+	// Loading facemesh
+	const runFacemesh = async () => {
+		const net = await facemesh.load({
+			inputResolution: { width: 640, height: 480 },
+			scale: 0.8,
+		});
+	};
+
 	return (
 		<div className="App">
 			<header className="App-header">
@@ -20,7 +28,7 @@ function App() {
 						marginRight: "auto",
 						left: 0,
 						right: 0,
-						textAlign: "center",
+						textAlign: "centr",
 						zIndex: 9,
 						width: 640,
 						height: 480,
@@ -34,7 +42,7 @@ function App() {
 						marginRight: "auto",
 						left: 0,
 						right: 0,
-						textAlign: "center",
+						textAlign: "centr",
 						zIndex: 9,
 						width: 640,
 						height: 480,
